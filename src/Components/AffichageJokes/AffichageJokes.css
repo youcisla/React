@@ -1,0 +1,7 @@
+.joke-box {
+  max-width: 600px;
+  background-color: #fff3cd;
+  border: 1px solid #ffeeba;
+  border-radius: 10px;
+  font-size: 1rem;
+}
