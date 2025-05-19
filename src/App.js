@@ -1,25 +1,58 @@
-import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Login from "./Components/Auth/Login";
+import Register from "./Components/Auth/Register";
+import AdminDashboard from "./Components/Admin/AdminDashboard";
+import UserDashboard from "./Components/User/UserDashboard";
 import Count from "./Components/Count/Count";
 import Jokes from "./Components/Jokes/Jokes";
-import Users from "./Components/Users/Users";
-import Login from "./Components/Login/Login";
+import ProtectedRoute from "./Components/ProtectedRoute/ProtectedRoute";
 import Wrapper from "./Components/Wrapper/Wrapper";
 
 function App() {
   return (
-    <div className="App">
-      <BrowserRouter>
-        <Wrapper>
-          <Routes>
-            <Route path="/" element={<Login />} />
-            <Route path="/users" element={<Users />} />
-            <Route path="/count" element={<Count />} />
-            <Route path="/jokes" element={<Jokes />} />
-          </Routes>
-        </Wrapper>
-      </BrowserRouter>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        {/* Public */}
+        <Route path="/" element={<Wrapper><Login /></Wrapper>} />
+        <Route path="/register" element={<Wrapper><Register /></Wrapper>} />
+
+        {/* Admin */}
+        <Route
+          path="/admin"
+          element={
+            <ProtectedRoute allowedRole="admin">
+              <Wrapper><AdminDashboard /></Wrapper>
+            </ProtectedRoute>
+          }
+        />
+
+        {/* Utilisateur */}
+        <Route
+          path="/user"
+          element={
+            <ProtectedRoute allowedRole="user">
+              <Wrapper><UserDashboard /></Wrapper>
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/count"
+          element={
+            <ProtectedRoute allowedRole="user">
+              <Wrapper><Count /></Wrapper>
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/jokes"
+          element={
+            <ProtectedRoute allowedRole="user">
+              <Wrapper><Jokes /></Wrapper>
+            </ProtectedRoute>
+          }
+        />
+      </Routes>
+    </BrowserRouter>
   );
 }
 

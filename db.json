@@ -1,44 +1,40 @@
 {
   "users": [
     {
-      "id": "1",
-      "nom": "Francis",
-      "prenom": "Huster"
+      "id": 1,
+      "role": "admin",
+      "email": "admin@reactify.com",
+      "username": "admin",
+      "password": "admin",
+      "prenom": "Youcef",
+      "nom": "Chehboub"
     },
     {
-      "id": "2",
-      "nom": "Mylène",
-      "prenom": "Farmer"
+      "id": 2,
+      "role": "user",
+      "email": "user@reactify.com",
+      "username": "user",
+      "password": "Test123!",
+      "prenom": "Ali",
+      "nom": "Ben"
     },
     {
-      "id": "3",
-      "nom": "Michel",
-      "prenom": "Sardou"
+      "id": 3,
+      "role": "user",
+      "email": "john@reactify.com",
+      "username": "john",
+      "password": "Test123!",
+      "prenom": "John",
+      "nom": "Doe"
     },
     {
-      "id": "4",
-      "nom": "Elie",
-      "prenom": "Yaffa"
-    },
-    {
-      "id": "5",
-      "nom": "La",
-      "prenom": "Fouine"
-    },
-    {
-      "id": "2fda",
-      "nom": "Francky",
-      "prenom": "Vincent"
-    },
-    {
-      "id": "1433",
-      "nom": "Michel",
-      "prenom": "Blanc"
-    },
-    {
-      "id": "cc96",
-      "nom": "Chehboub",
-      "prenom": "Youcef"
+      "id": 4,
+      "email": "leomette@gmail.com",
+      "prenom": "Mette",
+      "nom": "Leo",
+      "username": "leo",
+      "password": "Test123!",
+      "role": "user"
     }
   ]
 }
